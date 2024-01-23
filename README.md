@@ -14,8 +14,7 @@ DATABASE_NAME=
 PORT=
 ```
 
-* Use the command
+* Use the following command to start the express server.
 ```sh
 npm start
 ```
-to start the express server.
