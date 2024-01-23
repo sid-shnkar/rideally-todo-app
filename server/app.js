@@ -6,7 +6,7 @@ const app = express();
 const todoRoutes = require("./routes/todoRoutes");
 
 // Connect static files in 'public' directory
-app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "..", "frontend", "public")));
 
 // Parse incoming requests with JSON payloads
 app.use(express.json());
@@ -16,7 +16,7 @@ app.use("/api", todoRoutes);
 
 // Connect html file
 app.get("/", (req, res) => {
-  res.sendFile("index.html", { root: path.join(__dirname, "..", "views") });
+  res.sendFile("index.html", { root: path.join(__dirname, "..", "frontend", "views") });
 });
 
 const PORT = process.env.PORT || 3000;
