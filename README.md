@@ -14,6 +14,8 @@ DATABASE_NAME=
 PORT=
 ```
 
+* Run the file ***dbCreation.js** located inside the **db** folder to create the database and tables
+
 * Use the following command to start the express server.
 ```sh
 npm start
