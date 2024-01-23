@@ -2,7 +2,7 @@ const db = require("../db/dbConnection");
 
 /**
  * Method to query the DB to get list of all todos
- * @returns 
+ * @returns
  */
 const getTodos = () => {
   return new Promise((resolve, reject) => {
@@ -20,10 +20,10 @@ const getTodos = () => {
 
 /**
  * Method to query the DB to add a new todo
- * @param {id of the todo to be added} id 
- * @param {todo text} text 
- * @param {tells the completion status} checked 
- * @returns 
+ * @param {id of the todo to be added} id
+ * @param {todo text} text
+ * @param {tells the completion status} checked
+ * @returns
  */
 const addTodo = (id, text, checked) => {
   return new Promise((resolve, reject) => {
@@ -43,19 +43,15 @@ const addTodo = (id, text, checked) => {
 
 /**
  * Method to query the DB to update the completed status of a todo
- * @param {id of the todo to update} id 
- * @param {tells the completion status} checked 
- * @returns 
+ * @param {id of the todo to update} id
+ * @param {tells the completion status} checked
+ * @returns
  */
 const markChecked = (id, checked) => {
   return new Promise((resolve, reject) => {
     const query =
       "UPDATE todo_list SET completed = ?, completed_at = ? WHERE id = ?";
     const values = [checked, new Date().toISOString(), id];
-    // -------------
-    console.log("checked value: " + checked);
-    console.log("id value: " + id);
-    console.log(values);
 
     db.query(query, values, (err, result) => {
       if (err) {
@@ -69,8 +65,8 @@ const markChecked = (id, checked) => {
 
 /**
  * Method to query the DB to delete a todo
- * @param {id of the todo to be deleted} id 
- * @returns 
+ * @param {id of the todo to be deleted} id
+ * @returns
  */
 const deleteTodo = (id) => {
   return new Promise((resolve, reject) => {

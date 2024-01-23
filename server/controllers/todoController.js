@@ -23,8 +23,6 @@ const getTodos = async (req, res) => {
  * @returns
  */
 const addTodo = async (req, res) => {
-  // -------- working
-  console.log(req.body);
   try {
     const result = await todoModel.addTodo(
       req.body.id,
@@ -45,8 +43,6 @@ const addTodo = async (req, res) => {
  * @returns
  */
 const markChecked = async (req, res) => {
-  // -------- working
-  console.log(req.body);
   try {
     await todoModel.markChecked(req.body.id, req.body.checked);
     res.send("Todo item checked successfully");
@@ -63,8 +59,6 @@ const markChecked = async (req, res) => {
  * @returns
  */
 const deleteTodo = async (req, res) => {
-  // -------- working
-  console.log(req.body);
   try {
     await todoModel.deleteTodo(req.body.id);
     res.send("Todo item deleted successfully");
